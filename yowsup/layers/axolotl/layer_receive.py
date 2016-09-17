@@ -200,8 +200,10 @@ class AxolotlReceivelayer(AxolotlBaseLayer):
             self.handleImageMessage(node, m.image_message)
 
         if not handled:
-            print(m)
-            raise ValueError("Unhandled")
+            handled = True
+            self.handleConversationMessage(node, m.conversation)
+            # print(m)
+            # raise ValueError("Unhandled")
 
     def handleSenderKeyDistributionMessage(self, senderKeyDistributionMessage, axolotlAddress):
         groupId = senderKeyDistributionMessage.groupId
