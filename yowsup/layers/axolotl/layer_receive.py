@@ -170,11 +170,11 @@ class AxolotlReceivelayer(AxolotlBaseLayer):
         try:
             m.ParseFromString(serializedData)
         except:
-            print("DUMP:")
-            print(serializedData)
-            print([s for s in serializedData])
-            print([ord(s) for s in serializedData])
-            raise
+            #print("DUMP:")
+            #print(serializedData)
+            #print([s for s in serializedData])
+            #print([ord(s) for s in serializedData])
+            pass
         if not m or not serializedData:
             raise ValueError("Empty message")
 
