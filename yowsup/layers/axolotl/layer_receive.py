@@ -174,6 +174,7 @@ class AxolotlReceivelayer(AxolotlBaseLayer):
             #print(serializedData)
             #print([s for s in serializedData])
             #print([ord(s) for s in serializedData])
+            #raise
             pass
         if not m or not serializedData:
             raise ValueError("Empty message")
@@ -201,7 +202,7 @@ class AxolotlReceivelayer(AxolotlBaseLayer):
 
         if not handled:
             handled = True
-            self.handleConversationMessage(node, m.conversation)
+            self.handleConversationMessage(node, serializedData)
             # print(m)
             # raise ValueError("Unhandled")
 
